@@ -6,10 +6,10 @@ namespace App\Controllers;
 
 use App\View;
 
-class HomeController
+class TransactionsController
 {
     public function index(): View
     {
-        return View::make('index/index');
+        return View::make('transactions//index');
     }
 }

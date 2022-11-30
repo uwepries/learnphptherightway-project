@@ -16,14 +16,15 @@ class View
 
     public static function make(string $view, array $params = []): static
     {
-        return new static($view, $params);
+        return new static(strtr($view, ['../' => '', '//' => '/']), $params);
     }
 
     public function render(): string
     {
         $viewPath = VIEW_PATH . '/' . $this->view . '.php';
-
-        if (! file_exists($viewPath)) {
+        
+        if (!file_exists($viewPath)) {
+            var_dump($viewPath);
             throw new ViewNotFoundException();
         }
 
