@@ -10,6 +10,16 @@ class TransactionsController
 {
     public function index(): View
     {
-        return View::make('transactions//index');
+        return View::make('transactions/index');
+    }
+
+    public function show(int $id): View
+    {
+        return View::make('transactions/show');
+    }
+
+    public function store(Request $request): View
+    {
+        return View::make('transactions/store');
     }
 }

@@ -21,6 +21,8 @@ $router = new Router();
 $router
     ->get('/', [HomeController::class, 'index'])
     ->get('/transactions', [TransactionsController::class, 'index'])
+    //->get('/transactions/{id}', [TransactionsController::class, 'show'])
+    //->post('/transactions', [TransactionsController::class, 'store'])
 ;
 
 (new App(
